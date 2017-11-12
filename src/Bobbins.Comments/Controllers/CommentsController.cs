@@ -57,9 +57,12 @@ namespace Bobbins.Comments.Controllers
         public async Task<IActionResult> Post([FromBody] CommentDto commentDto, CancellationToken ct)
         {
             var comment = _mapper.Map<Comment>(commentDto);
+            
             _context.Comments.Add(comment);
             
             await _context.SaveChangesAsync(ct).ConfigureAwait(false);
+
+            await _context.IncrementReplyCountAsync(commentDto.ReplyToId.GetValueOrDefault(), ct);
             
             return CreatedAtAction("GetComment", new {id = comment.Id}, _mapper.Map<CommentDto>(comment));
         }

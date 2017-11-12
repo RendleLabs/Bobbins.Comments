@@ -6,6 +6,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0-preview-20170628-02" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="2.0.0" />
     <PackageReference Include="xunit" Version="2.3.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
   </ItemGroup>
@@ -13,9 +14,6 @@
     <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Bobbins.Comments\Bobbins.Comments.csproj">
-      <Project>{C94656DB-0F56-4588-A900-D9B989D9623A}</Project>
-      <Name>Bobbins.Comments</Name>
-    </ProjectReference>
+    <ProjectReference Include="..\..\src\Bobbins.Comments.Data\Bobbins.Comments.Data.csproj" />
   </ItemGroup>
 </Project>

@@ -25,7 +25,7 @@ namespace Bobbins.Comments.Data
 
         public int DownVoteCount { get; set; }
 
-        public int CommentCount { get; set; }
+        public int ReplyCount { get; set; }
 
         public List<Vote> Votes { get; set; }
     }
