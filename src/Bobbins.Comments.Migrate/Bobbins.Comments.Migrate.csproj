@@ -11,7 +11,7 @@
     <PackageReference Include="RendleLabs.EntityFrameworkCore.MigrateHelper" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bobbins.Comments.Data\Bobbins.Comments.Data.csproj" />
