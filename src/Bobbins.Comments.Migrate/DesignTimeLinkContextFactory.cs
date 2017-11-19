@@ -1,4 +1,5 @@
-﻿using Bobbins.Comments.Data;
+﻿using System.Linq;
+using Bobbins.Comments.Data;
 using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
@@ -15,7 +16,7 @@ namespace Bobbins.Comments.Migrate
         public CommentContext CreateDbContext(string[] args)
         {
             var builder = new DbContextOptionsBuilder<CommentContext>()
-                .UseNpgsql(LocalPostgres, b => b.MigrationsAssembly(MigrationAssemblyName));
+                .UseNpgsql(args.FirstOrDefault() ?? LocalPostgres, b => b.MigrationsAssembly(MigrationAssemblyName));
             return new CommentContext(builder.Options);
         }
     }
